@@ -4,8 +4,6 @@
 
 ## Arch Linux tips
 
----
-
 ### **Disabling laptop beeper**
 
 [Full guide (Arch Wiki)](https://wiki.archlinux.org/title/PC_speaker)
@@ -43,7 +41,7 @@ EndSection
 
 ---
 
-### **Adding correctly visible emoji**
+### **Displaying emoji correctly**
 
 1. Install the fonts: `sudo pacman -S noto-fonts-emoji`
 
