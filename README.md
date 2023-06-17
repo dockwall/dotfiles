@@ -85,3 +85,37 @@ EndSection
 3. Run `fc-cache -v`
 
 ---
+
+### **Bluetooth in Arch**
+
+[Full guide with Bluetooth (Arch Linux)](https://wiki.archlinux.org/title/bluetooth)
+
+1. Install some packages: `sudo pacman -S bluez bluez-utils blueman`
+
+2. Check that `btusb` (generic kernel BT module) is loaded: `lsmod | grep btusb`. If it is not, load it by `modprobe btusb`
+
+3. Check that bluetooth sytstem service is active: `sudo systemctl status bluetooth`. If it is not, enable it by `sudo systemctl enable bluetooth`
+
+4. For BT connections use CLI (`bluetoothctl`) or GUI (`blueman`)
+
+---
+
+### **Wrong time in Windows after Dual Boot with Arch**
+
+The best fix for this problem is making Arch use local time: `timedatectl set-local-rtc 1 --adjust-system-clock`
+
+---
+
+### **Function keys not working properly**
+
+[Full guide (Arch Linux)](https://wiki.archlinux.org/title/Apple_Keyboard#Function_keys_do_not_work)
+
+1. Temporarily solution: `echo 2 >> /sys/module/hid_apple/parameters/fnmode`
+
+2. Permanent solution: create/update the file `/etc/modprobe.d/hid_apple.conf`:
+
+   ```conf
+   options hid_apple fnmode=2
+   ```
+
+   Then regenerate the initramfs: `mkinitcpio -P`
