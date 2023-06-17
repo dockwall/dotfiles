@@ -458,5 +458,5 @@ client.connect_signal("unfocus", function(c) c.border_color = beautiful.border_n
 -- }}}
 
 -- Autostart
-awful.spawn.with_shell("/home/dockwall/.config/polybar/awesome.sh")
+awful.spawn.with_shell("~/.config/polybar/awesome.sh")
 awful.spawn.with_shell("picom")
