@@ -41,7 +41,7 @@ EndSection
 
 ---
 
-### **Displaying emoji correctly**
+### **Issue with incorrect display of emojis**
 
 1. Install the fonts: `sudo pacman -S noto-fonts-emoji`
 
@@ -90,7 +90,7 @@ EndSection
 
 [Full guide with Bluetooth (Arch Linux)](https://wiki.archlinux.org/title/bluetooth)
 
-1. Install some packages: `sudo pacman -S bluez bluez-utils blueman`
+1. Install these packages: `sudo pacman -S bluez bluez-utils blueman`
 
 2. Check that `btusb` (generic kernel BT module) is loaded: `lsmod | grep btusb`. If it is not, load it by `modprobe btusb`
 
@@ -102,11 +102,11 @@ EndSection
 
 ### **Wrong time in Windows after Dual Boot with Arch**
 
-The best fix for this problem is making Arch use local time: `timedatectl set-local-rtc 1 --adjust-system-clock`
+The best solution for this problem would be making Arch to use local time: `timedatectl set-local-rtc 1 --adjust-system-clock`
 
 ---
 
-### **Function keys not working properly**
+### **Function keys are not working properly**
 
 [Full guide (Arch Linux)](https://wiki.archlinux.org/title/Apple_Keyboard#Function_keys_do_not_work)
 
