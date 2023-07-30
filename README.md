@@ -94,7 +94,7 @@ EndSection
 
 2. Check that `btusb` (generic kernel BT module) is loaded: `lsmod | grep btusb`. If it is not, load it by `modprobe btusb`
 
-3. Check that bluetooth sytstem service is active: `sudo systemctl status bluetooth`. If it is not, enable it by `sudo systemctl enable bluetooth`
+3. Check that bluetooth system service is active: `sudo systemctl status bluetooth`. If it is not, enable it by `sudo systemctl enable bluetooth`
 
 4. For BT connections use CLI (`bluetoothctl`) or GUI (`blueman`)
 
@@ -119,3 +119,15 @@ The best solution for this problem would be making Arch to use local time: `time
    ```
 
    Then regenerate the initramfs: `mkinitcpio -P`
+
+---
+
+### **Config WireGuard Client in Arch**
+
+1. Install these packages: `yay -S wireguard-tools systemd-resolvconf`
+
+2. Copy your WireGuard `.conf` file to `/etc/wireguard/` with name `wg0.conf`
+
+3. Check that systemd-resolvconf system service is active: `sudo systemctl status systemd-resolved`. If it is not, enable it by `sudo systemctl enable systemd-resolved`
+
+4. Try to open WireGuard connection: `sudo wg-quick up wg0`. If it works, cool! You can manage connection by `wg-quick up/down wg0`
